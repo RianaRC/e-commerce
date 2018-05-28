@@ -3,3 +3,10 @@
 <p>Something really cool is coming yeah</p>
 </center>
 <%= image_tag @cat.image_url %>
+<% if user_signed_in? %>
+  <p> you are here <%= current_user.email%> </p>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+
+<%else%>
+  
+<%end%>
