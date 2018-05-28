@@ -23,7 +23,7 @@ Item5.save
 Item6 = Item.create(title: 'cat6', description: 'trés special ce chatton', price: 1.9, image_url: 'cat6.jpg' )
 Item6.save
 
-Item7 = Item.create(title: 'cat7', description: 'ohhh, fais attention a celui-ci', price: 2.7, image_url: 'cat7.jpg' )
+Item7 = Item.create(title: 'cat7', description: 'ohhh, fais attention a celui-ci', price: 2.7, image_url: 'cat7.png' )
 Item7.save
 
 Item8 = Item.create(title: 'cat8', description: 'Hola, regarde sa tete ', price: 1.8, image_url: 'cat8.jpg' )
