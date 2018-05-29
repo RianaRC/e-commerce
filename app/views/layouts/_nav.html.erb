@@ -33,15 +33,19 @@
 				<nav class="limiter-menu-desktop container">
 					
 					<!-- Logo desktop -->		
-					<a href="#" class="logo">
-						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
-					</a>
+					<!-- <a href="<%= root_path %>" class="logo">
+						<img src="/images/icons/logo-01.png" alt="IMG-LOGO">
+					</a> -->
+					
+					<%= link_to(root_path,data: { turbolinks: false }) do%>
+						<img src="/images/icons/logo-01.png" alt="IMG-LOGO">
+					<% end %>
 
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li>
-								<a href="index.html">Home</a>
+								<a href="<%= root_path %>">Home</a>
 								<ul class="sub-menu">
 									<li><a href="index.html">Homepage 1</a></li>
 									<li><a href="home-02.html">Homepage 2</a></li>
@@ -93,7 +97,8 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<!-- <a href="<%= root_path %>"><img src="/images/icons/logo-01.png" alt="IMG-LOGO"></a> -->
+				<%= link_to '<img src="/images/icons/logo-01.png" alt="IMG-LOGO">', root_path, data: { turbolinks: false }%>
 			</div>
 
 			<!-- Icon header -->
@@ -152,7 +157,7 @@
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="index.html">Home</a>
+					<a href="<%= root_path %>">Home</a>
 					<ul class="sub-menu-m">
 						<li><a href="index.html">Homepage 1</a></li>
 						<li><a href="home-02.html">Homepage 2</a></li>
@@ -189,7 +194,7 @@
 		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
 			<div class="container-search-header">
 				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="images/icons/icon-close2.png" alt="CLOSE">
+					<img src="/images/icons/icon-close2.png" alt="CLOSE">
 				</button>
 
 				<form class="wrap-search-header flex-w p-l-15">
