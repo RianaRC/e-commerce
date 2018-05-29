@@ -24410,3 +24410,5 @@ FOREIGN KEY ("cart_id")
   [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
   [1m[36mAssociateItemCart Create (6.3ms)[0m  [1m[32mINSERT INTO "associate_item_carts" ("item_id", "cart_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_id", 1], ["cart_id", 1], ["created_at", "2018-05-29 09:35:05.039153"], ["updated_at", "2018-05-29 09:35:05.039153"]]
   [1m[35m (27.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (2.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."title" = $1 LIMIT $2[0m  [["title", "cat1"], ["LIMIT", 1]]
