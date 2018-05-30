@@ -11,7 +11,8 @@ class HomeController < ApplicationController
 	  		end
     	else
     		@cart = Cart.new
-    		@cart.user = current_user
+    		current_user.cart = @cart
+    		@cart.save
     		@items = []
     	end
     end
@@ -46,7 +47,8 @@ class HomeController < ApplicationController
   			render "cart"
     	else
     		@cart = Cart.new
-    		@cart.user = current_user
+    		current_user.cart = @cart
+    		@cart.save
     		@items = []
     		render "cart"
     	end
