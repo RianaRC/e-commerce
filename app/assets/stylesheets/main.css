@@ -3339,6 +3339,13 @@ input.num-product::-webkit-inner-spin-button {
   background-size: cover;
 }
 
+.cart-pic{
+  height: 70px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .hov-img0 .cat{
   width: 100%;
   -webkit-transition: transform 0.9s ease;
