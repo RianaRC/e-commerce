@@ -57529,3 +57529,263 @@ Completed 200 OK in 394ms (Views: 338.3ms | ActiveRecord: 11.5ms)
 
 
 >>>>>>> 6d6ad5708e7121d1a420a42c6eea49e84406d26b
+Started GET "/" for 127.0.0.1 at 2018-05-30 17:09:17 +0300
+  [1m[35m (21.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/riana/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/home/riana/website-for-yali/e-commerce/app/controllers/home_controller.rb:14: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< HEAD
+^~
+/home/riana/website-for-yali/e-commerce/app/controllers/home_controller.rb:17: syntax error, unexpected ||, expecting keyword_end
+||||||| merged common ancestors
+^~
+/home/riana/website-for-yali/e-commerce/app/controllers/home_controller.rb:19: syntax error, unexpected ===, expecting keyword_end
+=======
+^~~
+/home/riana/website-for-yali/e-commerce/app/controllers/home_controller.rb:22: syntax error, unexpected >>, expecting keyword_end
+>>>>>>> 6d6ad5708e7121d1a420a42...
+^~):
+  
+app/controllers/home_controller.rb:14: syntax error, unexpected <<, expecting keyword_end
+app/controllers/home_controller.rb:17: syntax error, unexpected ||, expecting keyword_end
+app/controllers/home_controller.rb:19: syntax error, unexpected ===, expecting keyword_end
+app/controllers/home_controller.rb:22: syntax error, unexpected >>, expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2018-05-30 17:10:15 +0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCart Load (2.9ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5
+  [1m[36mAssociateItemCart Load (7.8ms)[0m  [1m[34mSELECT "associate_item_carts".* FROM "associate_item_carts" WHERE "associate_item_carts"."cart_id" = $1[0m  [["cart_id", 2]]
+  ↳ app/controllers/home_controller.rb:9
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mItem Load (3.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/home/index.html.erb:306
+  Rendered home/index.html.erb within layouts/application (1532.8ms)
+  Rendered layouts/_nav.html.erb (7.7ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 2217ms (Views: 1935.9ms | ActiveRecord: 104.8ms)
+
+
+Started GET "/items/3" for 127.0.0.1 at 2018-05-30 17:10:27 +0300
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (2.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:23
+  [1m[36mCart Load (1.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:24
+  [1m[36mAssociateItemCart Load (3.3ms)[0m  [1m[34mSELECT "associate_item_carts".* FROM "associate_item_carts" WHERE "associate_item_carts"."cart_id" = $1[0m  [["cart_id", 2]]
+  ↳ app/controllers/home_controller.rb:27
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (23.3ms)
+  Rendered layouts/_nav.html.erb (7.0ms)
+  Rendered layouts/_footer.html.erb (2.0ms)
+Completed 200 OK in 341ms (Views: 292.4ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/carts/3/create" for 127.0.0.1 at 2018-05-30 17:10:31 +0300
+Processing by CartController#create as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cart_controller.rb:3
+  [1m[36mItem Load (3.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cart_controller.rb:4
+  [1m[36mCart Load (1.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cart_controller.rb:6
+  [1m[36mAssociateItemCart Load (2.2ms)[0m  [1m[34mSELECT  "associate_item_carts".* FROM "associate_item_carts" WHERE "associate_item_carts"."item_id" = $1 LIMIT $2[0m  [["item_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cart_controller.rb:7
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cart_controller.rb:15
+  [1m[36mAssociateItemCart Create (15.4ms)[0m  [1m[32mINSERT INTO "associate_item_carts" ("item_id", "cart_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_id", 3], ["cart_id", 2], ["created_at", "2018-05-30 14:10:31.811967"], ["updated_at", "2018-05-30 14:10:31.811967"]]
+  ↳ app/controllers/cart_controller.rb:15
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cart_controller.rb:15
+Redirected to http://localhost:3000/items/3
+Completed 302 Found in 258ms (ActiveRecord: 58.8ms)
+
+
+Started GET "/items/3" for 127.0.0.1 at 2018-05-30 17:10:31 +0300
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (11.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:23
+  [1m[36mCart Load (1.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:24
+  [1m[36mAssociateItemCart Load (6.5ms)[0m  [1m[34mSELECT "associate_item_carts".* FROM "associate_item_carts" WHERE "associate_item_carts"."cart_id" = $1[0m  [["cart_id", 2]]
+  ↳ app/controllers/home_controller.rb:27
+  [1m[36mItem Load (1.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:28
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (25.2ms)
+  Rendered layouts/_nav.html.erb (5.6ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 285ms (Views: 206.2ms | ActiveRecord: 25.7ms)
+
+
+Started GET "/items/shoping-cart.html" for 127.0.0.1 at 2018-05-30 17:10:44 +0300
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"shoping-cart"}
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22
+Completed 404 Not Found in 5ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Item with 'id'=shoping-cart):
+  
+app/controllers/home_controller.rb:22:in `show'
+Started GET "/" for 127.0.0.1 at 2018-05-30 17:11:17 +0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5
+  [1m[36mAssociateItemCart Load (1.3ms)[0m  [1m[34mSELECT "associate_item_carts".* FROM "associate_item_carts" WHERE "associate_item_carts"."cart_id" = $1[0m  [["cart_id", 2]]
+  ↳ app/controllers/home_controller.rb:9
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mItem Load (1.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/home/index.html.erb:306
+  Rendered home/index.html.erb within layouts/application (148.2ms)
+  Rendered layouts/_nav.html.erb (6.1ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 352ms (Views: 328.4ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-30 17:11:22 +0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCart Load (1.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:5
+  [1m[36mAssociateItemCart Load (1.2ms)[0m  [1m[34mSELECT "associate_item_carts".* FROM "associate_item_carts" WHERE "associate_item_carts"."cart_id" = $1[0m  [["cart_id", 2]]
+  ↳ app/controllers/home_controller.rb:9
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:10
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/home/index.html.erb:306
+  Rendered home/index.html.erb within layouts/application (88.4ms)
+  Rendered layouts/_nav.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 242ms (Views: 220.4ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/items/2" for 127.0.0.1 at 2018-05-30 17:11:26 +0300
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:23
+  [1m[36mCart Load (1.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:24
+  [1m[36mAssociateItemCart Load (1.2ms)[0m  [1m[34mSELECT "associate_item_carts".* FROM "associate_item_carts" WHERE "associate_item_carts"."cart_id" = $1[0m  [["cart_id", 2]]
+  ↳ app/controllers/home_controller.rb:27
+  [1m[36mItem Load (10.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:28
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (19.9ms)
+  Rendered layouts/_nav.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 259ms (Views: 222.8ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/carts/2/create" for 127.0.0.1 at 2018-05-30 17:11:30 +0300
+Processing by CartController#create as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cart_controller.rb:3
+  [1m[36mItem Load (2.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cart_controller.rb:4
+  [1m[36mCart Load (1.0ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cart_controller.rb:6
+  [1m[36mAssociateItemCart Load (1.0ms)[0m  [1m[34mSELECT  "associate_item_carts".* FROM "associate_item_carts" WHERE "associate_item_carts"."item_id" = $1 LIMIT $2[0m  [["item_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cart_controller.rb:7
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cart_controller.rb:15
+  [1m[36mAssociateItemCart Create (5.1ms)[0m  [1m[32mINSERT INTO "associate_item_carts" ("item_id", "cart_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["item_id", 2], ["cart_id", 2], ["created_at", "2018-05-30 14:11:30.344072"], ["updated_at", "2018-05-30 14:11:30.344072"]]
+  ↳ app/controllers/cart_controller.rb:15
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cart_controller.rb:15
+Redirected to http://localhost:3000/items/2
+Completed 302 Found in 40ms (ActiveRecord: 15.4ms)
+
+
+Started GET "/items/2" for 127.0.0.1 at 2018-05-30 17:11:30 +0300
+Processing by HomeController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (5.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:22
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:23
+  [1m[36mCart Load (1.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:24
+  [1m[36mAssociateItemCart Load (2.9ms)[0m  [1m[34mSELECT "associate_item_carts".* FROM "associate_item_carts" WHERE "associate_item_carts"."cart_id" = $1[0m  [["cart_id", 2]]
+  ↳ app/controllers/home_controller.rb:27
+  [1m[36mItem Load (2.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:28
+  [1m[36mItem Load (2.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:28
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (26.6ms)
+  Rendered layouts/_nav.html.erb (6.8ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 276ms (Views: 224.5ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-05-30 17:12:11 +0300
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:3
+  [1m[36mCart Load (1.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:4
+  [1m[36mAssociateItemCart Load (1.1ms)[0m  [1m[34mSELECT "associate_item_carts".* FROM "associate_item_carts" WHERE "associate_item_carts"."cart_id" = $1[0m  [["cart_id", 2]]
+  ↳ app/controllers/charges_controller.rb:8
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:9
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:9
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_nav.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (2.4ms)
+Completed 200 OK in 175ms (Views: 147.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/charges/images/icons/favicon.png" for 127.0.0.1 at 2018-05-30 17:12:14 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/charges/images/icons/favicon.png"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'

@@ -11,15 +11,8 @@ class HomeController < ApplicationController
 	  		end
     	else
     		@cart = Cart.new
-<<<<<<< HEAD
-				current_user.cart = @cart
-				@cart.save
-||||||| merged common ancestors
-    		@cart.user = current_user
-=======
     		current_user.cart = @cart
     		@cart.save
->>>>>>> 6d6ad5708e7121d1a420a42c6eea49e84406d26b
     		@items = []
     	end
     end
