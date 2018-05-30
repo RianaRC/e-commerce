@@ -17,7 +17,9 @@ class HomeController < ApplicationController
     end
   end
 
-  def show
+	def show
+		UserMailer.welcome_mail(current_user).deliver_now
+		
   	@cat = Item.find(params[:id])
   	if user_signed_in?
     	@cart = Cart.find_by(user_id: current_user.id)
