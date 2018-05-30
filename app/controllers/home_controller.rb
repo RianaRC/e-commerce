@@ -11,15 +11,14 @@ class HomeController < ApplicationController
 	  		end
     	else
     		@cart = Cart.new
-    		@cart.user = current_user
+				current_user.cart = @cart
+				@cart.save
     		@items = []
     	end
     end
   end
 
 	def show
-		UserMailer.welcome_mail(current_user).deliver_now
-		
   	@cat = Item.find(params[:id])
   	if user_signed_in?
     	@cart = Cart.find_by(user_id: current_user.id)
@@ -48,7 +47,8 @@ class HomeController < ApplicationController
   			render "cart"
     	else
     		@cart = Cart.new
-    		@cart.user = current_user
+				@cart.user = current_user
+				@cart.save
     		@items = []
     		render "cart"
     	end
