@@ -27446,3 +27446,7 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 178ms (Views: 174.6ms | ActiveRecord: 0.0ms)
 
 
+  [1m[36mCart Load (3.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 11]]
+  [1m[36mCart Load (1.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 11]]
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 11]]
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
