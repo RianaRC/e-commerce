@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Bonjour,</h1>
+    <p>
+      Voici la liste des images que vous avez commandé: <br>
+      <ul>
+        <% @items.each do |i| %>
+        <li><strong><%= i.title %>:</strong>&nbsp;<%= i.image_url %></li>
+        <%end%>
+      </ul>
+    </p>
+  </body>
+</html>

@@ -18,21 +18,6 @@ class ChargesController < ApplicationController
 	end
 
 	def create
-		if user_signed_in?
-    	@cart = Cart.find_by(user_id: current_user.id)
-    	if @cart != nil
-	  		associations = AssociateItemCart.where(cart_id: @cart.id)
-	  		@items = []
-	  		associations.each do |a|
-	  			@items.push(Item.find(a.item_id))
-	  		end
-    	else
-    		@cart = Cart.new
-    		current_user.cart = @cart
-    		@cart.save
-    		@items = []
-    	end
-    end
 	  # Amount in cents
 	  @amount = 500
 
@@ -48,8 +33,12 @@ class ChargesController < ApplicationController
 	    :currency    => 'usd'
 	  )
 
+	  flash[:error] = "Votre commande a bien été enregistrer! Veuillez vérifier votre email"
+	  UserMailer.order_email(@user).deliver_now
+	  redirect_to cart_show_path
+
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
-	  redirect_to new_charge_path
+	  redirect_to cart_show_path
 	end	
 end
