@@ -16,9 +16,9 @@ class CartController < ApplicationController
 
 		  		flash[:success] = "Ajouté avec succès !"
 
-  				redirect(item_show_path(params[:id]))
+  				redirect_to item_show_path(params[:id])
   			else
-  				flash[:error] = "Vous avez déjà commander cet image !"
+  				flash[:warning] = "Vous avez déjà commander cet image !"
   				redirect_to item_show_path(params[:id])
   			end
   		else
