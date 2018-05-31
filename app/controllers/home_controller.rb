@@ -56,4 +56,8 @@ class HomeController < ApplicationController
   		redirect_to(user_session_path)
   	end
   end
+
+  def profil
+	@items = Item.all
+  end
 end
