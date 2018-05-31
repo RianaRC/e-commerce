@@ -13,10 +13,17 @@
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							Help & FAQs
 						</a>
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
+						<% if user_signed_in? %>
+						<a href=" " class="flex-c-m trans-04 p-lr-25">
+							My account
+						</a>
+						<%= link_to "Mon compte", profil_path(current_user.id), class: "flex-c-m trans-04 p-lr-25" %>
+						<% else %>
+						
+						<a href="" disabled class="flex-c-m trans-04 p-lr-25">
 							My Account
 						</a>
+						<%end%>
 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							EN
@@ -86,7 +93,7 @@
 							<i class="zmdi zmdi-search"></i>
 						</div>
 
-						<%if user_signed_in?%>
+						<%if user_signed_in? && @items%>
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="<% 
 							n = 0 
 							@items.each do |i| 
