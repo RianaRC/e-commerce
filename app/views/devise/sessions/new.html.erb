@@ -33,33 +33,33 @@
     <div class="container">
       <div class="flex-w flex-tr">
         <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-          <form>
+
             <h4 class="mtext-105 cl2 txt-center p-b-30">
               LOG IN
-            </h4>
-                <%= f.label :email %> 
+            </h4> 
             <div class="bor8 m-b-20 how-pos4-parent">
-                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "stext-111 cl2 plh3 size-116 p-l-62 p-r-30", placeholder: "Votre email" %>
+                <img class="how-pos4 pointer-none" src="/images/icons/icon-email.png" alt="ICON">
             </div>
 
-               <%= f.label :password %>
-            <div class="bor8 m-b-30">
-                <%= f.password_field :password, autocomplete: "off" %>
+            <div class="bor8 m-b-20 how-pos4-parent">
+                <%= f.password_field :password, autocomplete: "off", class: "stext-111 cl2 plh3 size-116 p-l-62 p-r-30", placeholder: "Mot de passe" %>
+                <img class="how-pos4 pointer-none" src="/images/icons/icon-pwd.png" alt="ICON">
             </div>
             
             <% if devise_mapping.rememberable? -%>
             <div class="field">
               <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
+              <%= f.label :Se_souvenir_de_moi %>
             </div>
             <% end -%>
 
             <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" method="submit">
-                    Log in
+                    Connexion
             </button>
             <br>
-            <%= link_to('Register', new_user_registration_path)  %>
-          </form>
+            <%= link_to('Pas encore enregistrer?', new_user_registration_path)  %>
+
         </div>
 
         <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">

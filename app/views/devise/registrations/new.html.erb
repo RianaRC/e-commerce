@@ -33,82 +33,82 @@
     <%= devise_error_messages! %>
 
 
-  <section class="bg0 p-t-104 p-b-116">
+<section class="bg0 p-t-104 p-b-116">
   <div class="container">
-  <div class="flex-w flex-tr">
-    <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-      <form>
-        <h4 class="mtext-105 cl2 txt-center p-b-30">
-          SIGN UP
-        </h4>
-            <%= f.label :email %> 
-        <div class="bor8 m-b-20 how-pos4-parent">
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
+    <div class="flex-w flex-tr">
+      <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
 
-           <%= f.label :password %>
-           <% if @minimum_password_length %>
-           <em>(<%= @minimum_password_length %> characters minimum)</em>
-           <% end %><br />
-        <div class="bor8 m-b-30">
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
-
-        <%= f.label :password_confirmation %>
-        <div class="bor8 m-b-30">
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
-
-
-        <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" method="submit">
-                Sign up
-        </button>
-        <br>
-        <%= link_to('Register', new_user_registration_path)  %>
-      </form>
-    </div>
-
-    <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
-        <h4 class="mtext-105 cl2 txt-center p-b-30">
-            WELCOME
+          <h4 class="mtext-105 cl2 txt-center p-b-30">
+            SIGN UP
           </h4>
-      <div class="flex-w w-full p-b-42">
-        <span class="fs-18 cl5 txt-center size-211">
-          <span class="lnr lnr-map-marker"></span>
-        </span>
+              <%= f.label :email %> 
+          <div class="bor8 m-b-20 how-pos4-parent">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
 
-        <div class="size-212 p-t-2">
-          <span class="mtext-110 cl2">
-            Address
-          </span>
+             <%= f.label :password %>
+             <% if @minimum_password_length %>
+             <em>(<%= @minimum_password_length %> characters minimum)</em>
+             <% end %><br />
+          <div class="bor8 m-b-30">
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
 
-          <p class="stext-115 cl6 size-213 p-t-18">
-            Antananarivo, MADAGASCAR
-          </p>
-        </div>
+          <%= f.label :password_confirmation %>
+          <div class="bor8 m-b-30">
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          </div>
+
+
+          <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" method="submit">
+                  Sign up
+          </button>
+          <br>
+          <%= link_to('Register', new_user_registration_path)  %>
+          
       </div>
 
-      
-
-      <div class="flex-w w-full">
-        <span class="fs-18 cl5 txt-center size-211">
-          <span class="lnr lnr-envelope"></span>
-        </span>
-
-        <div class="size-212 p-t-2">
-          <span class="mtext-110 cl2">
-            Sale Support
+      <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
+          <h4 class="mtext-105 cl2 txt-center p-b-30">
+              WELCOME
+            </h4>
+        <div class="flex-w w-full p-b-42">
+          <span class="fs-18 cl5 txt-center size-211">
+            <span class="lnr lnr-map-marker"></span>
           </span>
 
-          <p class="stext-115 cl1 size-213 p-t-18">
-            test.sayna@gmail.com
-          </p>
+          <div class="size-212 p-t-2">
+            <span class="mtext-110 cl2">
+              Address
+            </span>
 
+            <p class="stext-115 cl6 size-213 p-t-18">
+              Antananarivo, MADAGASCAR
+            </p>
+          </div>
+        </div>
+
+        
+
+        <div class="flex-w w-full">
+          <span class="fs-18 cl5 txt-center size-211">
+            <span class="lnr lnr-envelope"></span>
+          </span>
+
+          <div class="size-212 p-t-2">
+            <span class="mtext-110 cl2">
+              Sale Support
+            </span>
+
+            <p class="stext-115 cl1 size-213 p-t-18">
+              test.sayna@gmail.com
+            </p>
+
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </section>
 
 

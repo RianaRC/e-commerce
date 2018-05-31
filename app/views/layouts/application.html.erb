@@ -31,9 +31,11 @@
     <!--===========================================/====================================================-->
       <link rel="stylesheet" type="text/css" href="/vendor/perfect-scrollbar/perfect-scrollbar.css">
     <!--===============================================================================================-->
+      <link rel="stylesheet" type="text/css" href="/css/util.css">
+      <link rel="stylesheet" type="text/css" href="/css/main.css">
 
+      <%= javascript_include_tag "application" %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
     
   </head>
 
@@ -41,9 +43,8 @@
     <%= render "layouts/nav"%>
     <%= yield %>
     <%= render "layouts/footer"%>
-  </body class="animsition">
 
-  <!--===============================================================================================-->  
+    <!--===============================================================================================-->  
     <script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
   <!--===============================================================================================-->
     <script src="/vendor/animsition/js/animsition.min.js"></script>
@@ -65,7 +66,7 @@
     <script src="/vendor/daterangepicker/daterangepicker.js"></script>
   <!--===============================================================================================-->
     <script src="/vendor/slick/slick.min.js"></script>
-    <%= javascript_include_tag 'slick-custom' %>
+    <script src="/js/slick-custom.js"></script>
   <!--===============================================================================================-->
     <script src="/vendor/parallax100/parallax100.js"></script>
     <script>
@@ -143,7 +144,9 @@
       });
     </script>
   <!--===============================================================================================-->
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag 'main' %>
+  <script src="/js/main.js"></script>
+  </body>
+
+
 
 </html>
