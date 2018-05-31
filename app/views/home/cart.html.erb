@@ -114,10 +114,7 @@
 
 						<div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
 							<div class="flex-w flex-m m-r-20 m-tb-5">
-									
-								<div class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-									Confirmer la commande
-								</div>
+								<%= link_to "confirmer la commande", "#",class: "flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer", data: {turbolinks: false, toggle: "modal", target: "#exampleModal"} %>
 							</div>
 						</div>
 					</div>
@@ -125,3 +122,40 @@
 			</div>
 		</div>
 	</form>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <%= form_tag charges_path do %>
+				  <article>
+				    <% if flash[:error].present? %>
+				      <div id="error_explanation">
+				        <p><%= flash[:error] %></p>
+				      </div>
+				    <% end %>
+				    <label class="amount">
+				      <span>Amount: $5.00</span>
+				    </label>
+				  </article>
+
+				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+				          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+				          data-description="A month's subscription"
+				          data-amount="500"
+				          data-locale="auto"></script>
+				<% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
