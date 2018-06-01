@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
  
     def welcome_email(user)
       @user = user
-      mail(to: @user.email , subject: 'Welcome to My Awesome Site')
+      mail(to: @user.email , subject: 'Newsletter')
     end
 
     def order_email(user)
@@ -15,5 +15,10 @@ class UserMailer < ApplicationMailer
       	@items.push(Item.find(assoc.item_id))
       end
       mail(to: @user.email , subject: 'Banc de commande')
+    end
+
+    def admin_report_email(user)
+      @user = user
+      mail(to: "test.sayna@gmail.com" , subject: 'Une commande a été faite')
     end
 end

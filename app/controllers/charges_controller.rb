@@ -57,7 +57,7 @@ class ChargesController < ApplicationController
   	cart.destroy
 
 	  flash[:success] = "Votre commande a bien été enregistrer! Veuillez vérifier votre email"
-	  UserMailer.order_email(@user).deliver_now
+	  UserMailer.order_email(current_user).deliver_now
 	  redirect_to cart_show_path
 
 	rescue Stripe::CardError => e
