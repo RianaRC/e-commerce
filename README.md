@@ -1,24 +1,10 @@
-# README
+# Cat store: site de vente d'image de chaton très mignon
+## Équipe: Madagascar
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Liste des membres du groupes:
+- Itokiana
+- Riana
+- Lovatiana
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Lien du projet:
+[Cat store: e-commerce](https://radiant-crag-43298.herokuapp.com)
